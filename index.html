@@ -3,87 +3,157 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>Hello APP</title>
-    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <script type="text/javascript" src="./script/flexible.js"></script>
     <style type="text/css">
-        html,
-        body {
-            height: 100%;
-        }
-
-        .wrap {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-flex-flow: column;
-        }
-
-        header {
-            height: 44px;
+        #header {
             width: 100%;
-            text-align: center;
-            background-color: #81a9c3;
-            color: #fff;
-            line-height: 44px;
-            font-size: 20px;
+            height: 1.28rem;
+            box-sizing: border-box;
         }
 
-        .flex-1 {
-            -webkit-box-flex: 1;
-            -webkit-flex: 1;
+        .delete {
+            width: 0.373333rem;
+            height: 0.373333rem;
+            padding-top: 0.906666rem;
+            padding-left: 0.48rem;
         }
-
-        footer {
-            height: 30px;
+        .logo_div {
             width: 100%;
-            background-color: #81a9c3;
-            color: white;
-            line-height: 30px;
+            margin-top: 1rem;
             text-align: center;
+        }
+        .logo {
+          width: 2.08rem;
+          height: 2.08rem;
+        }
+        .userName_input,
+        .userName_pwd {
+          width: 100%;
+          text-align: center;
+        }
+        .userName_input {
+            margin-top: 1.2rem;
+        }
+        .userName_pwd {
+          margin-top: 0.48rem;
+        }
+        .userName,
+        .userPwd {
+          box-sizing: border-box;
+          width: 8.533333rem;
+          height: 1.066666rem;
+          border: 1px solid #999999;
+          padding-left: 0.266666rem;
+          color: #B2B2B8;
+          font-size: 0.4rem;
+          border-radius: 1px;
+        }
+
+        .userName {
+
+        }
+
+        .userPwd {
+
+        }
+        .btn_submit {
+          width: 100%;
+          margin-top: 0.48rem;
+          text-align: center;
+        }
+        .submit {
+          width: 8.533333rem;
+          height: 1.066666rem;
+          color: #ffffff;
+          font-size: 0.453333rem;
+          background: #66CAFF;
+          border: 1px solid #66CAFF;
+          border-radius: 3px;
+        }
+        .footer {
+            width: 8.533333rem;
+            margin: 0 auto;
+        }
+        .register,
+        .forget_pwd {
+          color: #333333;
+          font-size: 0.346666rem;
+          margin-top: 0.213333rem;
+        }
+        .register {
+          float: left;
+        }
+        .forget_pwd {
+          float: right;
         }
     </style>
 </head>
 
-<body class="wrap">
-    <header>APICloud</header>
-    <section class="flex-1">
+<body>
+    <div  id="header">
+        <img src="./image/iconfont-iconfonticonfontclose.png" alt="" class="delete">
+    </div>
 
-    </section>
-    <footer>Copyright &copy;<span id="year"></span></footer>
+        <div class="logo_div">
+            <img class='logo' src="./image/logo.png" alt="">
+        </div>
+
+    <div id="main">
+        <div class="userName_input">
+            <input class='userName border' type="text" placeholder="请输入手机号">
+        </div>
+        <div class="userName_pwd">
+            <input class='userPwd' type="password" placeholder="登录密码">
+        </div>
+        <div class="btn_submit">
+            <button id="submit" class="submit" type="button" name="button">登录</button>
+        </div>
+        <div class="footer">
+            <span class="register" onclick="openRegister()">注册账号</span>
+            <span class="forget_pwd">忘记密码?</span>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/fastclick.js"></script>
 <script type="text/javascript">
-    apiready = function() {
-        //输出Log，Log将显示在APICloud Studio控制台
-        console.log("Hello World! Hello APICloud!");
+apiready = function() {
+    var header = $api.byId('header');
+    //适配iOS 7+，Android 4.4+状态栏
+    $api.fixStatusBar(header);
+    FastClick.attach(document.body);
+    function submitAjax() {
+      // var
+      // api.ajax({
+      //     url: ip + '/api/auth/login/psw',
+      //     method: 'post',
+      //     data: {
+      //         values: {
+      //             name: 'haha'
+      //         }
+      //     }
+      // },function(ret, err){
+      //     if (ret) {
+      //         alert( JSON.stringify( ret ) );
+      //     } else {
+      //         alert( JSON.stringify( err ) );
+      //     }
+      // });
 
-        var header = $api.dom('header'); // 获取 header 标签元素
-        var footer = $api.dom('footer'); // 获取 footer 标签元素
+    }
+};
+    function openRegister() {
+      api.openWin({
+          name: 'register',
+          url: './register.html'
+      });
 
-        // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
-        // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
-        // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
-        var headerH = $api.fixStatusBar(header);
-        // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
-        var footerH = $api.fixTabBar(footer);
 
-        api.openFrame({
-            name: 'main',
-            url: 'html/main.html',
-            bounces: true,
-            rect: { // 推荐使用Margin布局，用于适配屏幕的动态变化
-                marginTop: headerH, // main页面距离win顶部的高度
-                marginBottom: footerH, // main页面距离win底部的高度
-                w: 'auto' // main页面的宽度 自适应屏幕宽度
-            }
-        });
-
-        // 获取当前年份时间，并加载显示到页面
-        var year = $api.byId('year');
-        year.innerHTML = new Date().getFullYear();
-    };
-
+    }
 </script>
 
 </html>

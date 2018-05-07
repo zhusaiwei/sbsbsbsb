@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/aui.css">
+    <link rel="stylesheet" href="../css/aui-flex.css">
+    <script type="text/javascript" src="../script/flexible.js"></script>
+    <style type="text/css">
+        body {
+            background: #F5F5F5;
+            height: 100%;
+            width: 100%;
+        }
+
+        
+        .details {
+            height: 6.56rem;
+            background: #fff;
+        }
+
+        .details_left {
+            width: 1.70666rem;
+            box-sizing: border-box;
+            float: left;
+            padding-left: 0.29333rem;
+            padding-top: 0.18666rem;
+        }
+
+        .head_img {
+            display: inline-block;
+            border-radius: 50%;
+            width: 1.17333rem;
+            height: 1.17333rem;
+        }
+
+        .head_img>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .details_right {
+            width: 8rem;
+            float: left;
+        }
+
+        .details_right_top {
+            overflow: hidden;
+            /*padding-top: 0.2rem;*/
+            height: 0.56rem;
+            line-height: 0.56rem;
+            margin-top: 0.21333rem;
+        }
+
+        .details_right_top span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .details_img_box {
+            overflow: hidden;
+            margin-top: 0.16rem;
+        }
+
+        .details_img_item {
+            float: left;
+            width: 2.58666rem;
+            height: 2.58666rem;
+        }
+
+        .details_img_item:not(:last-child) {
+            margin-right: 0.12rem;
+        }
+
+        .details_img_item img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav aui-bar-light">
+    <a class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">Title</div>
+    <a class="aui-pull-right aui-btn aui-btn-outlined">
+        <span class="aui-iconfont aui-icon-search"></span>
+    </a>
+</header>
+    <div class="details">
+        <div class="details_left"><span class="head_img"><img src="../image/logo.png" alt=""></span></div>
+        <div class="details_right">
+            <div class="details_right_top"><span class="nickname" style="font-size:0.4rem;float:left;line-height:0.56rem;">ERtytyy</span><span class="reward" style="font-size:0.32rem;float:right;margin-right:0.48rem;">赏金:<span class="reward_price" style="margin-left:0.08rem;font-size:0.42666rem;vertical-align:top;color:#FF502A;">676$</span></span>
+            </div>
+            <div style="margin-top:0.1rem;font-size:0.34666rem;width:7.81333rem;color:#666666;line-height:0.50666rem;"><span class="details_text" style="display: -webkit-box;-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;overflow: hidden;">给自己一些是安吉斯安,原来美好的青春就你,给自己一些是安吉斯安,原来美好的青春就你,来来来 不按时的新书一下将诶小轿车会计师</span><span class="_details_tag" style="color:#D18438;">#健身#</span></div>
+            <div class="details_img_box">
+                <div class="details_img_item"><img src="../image/s1.png" alt=""></div>
+                <div class="details_img_item"><img src="../image/s1.png" alt=""></div>
+                <div class="details_img_item"><img src="../image/s1.png" alt=""></div>
+            </div>
+            <div class="other_info" style="margin-top:0.26666rem;overflow:hidden;">
+                <div style="float:left;color:#666666;">
+                    <p style="font-size:0.32rem;"><span><i class="iconfont" style="font-size:0.32rem;">&#xe608;</i></span><span style="font-size:0.32rem;">55km</span></p>
+                    <p style="font-size:0.29333rem;margin-top:0.13333rem;">一小时前</p>
+                </div>
+                <div style="float:right;margin-right:0.12rem;"><img src="../image/tell.png" alt=""></div>
+                <div style="float:right;"><i class="iconfont">&#xe608;</i></div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="footer" style="position:fixed;bottom:0;left:0;width:100%;height:1.3066rem;font-size:0.45333rem;color:#fff;">
+        <div style="width:3.0666rem;background:#FF8166;letter-spacing:0.2rem;height:1.30666rem;line-height:1.3066rem;float:left;text-align:center;">转帮</div>
+        <div style="width:6.93rem;background:#66CAFF;height:1.30666rem;line-height:1.3066rem;float:left;text-align:center;">帮一下</div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.byId('header');
+        //适配iOS 7+，Android 4.4+状态栏
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var MNActionButton = api.require('MNActionButton');
+        MNActionButton.open({
+            layout: {
+                row: 2,
+                col: 3,
+                rowSpacing: 5,
+                colSpacing: 10,
+                offset: 0
+            },
+            animation: true,
+            autoHide: true,
+            styles: {
+                maskBg: 'rgba(0,0,0,0.2)',
+                bg: '#fff',
+                cancelButton: {
+                    size: 44,
+                    bg: '#fff',
+                    icon: 'widget://res/action-button-cancel.png'
+                },
+                item: {
+                    titleColor: '#888',
+                    titleHighlight: 'dd2727',
+                    titleSize: 12
+                },
+                indicator: {
+                    color: '#c4c4c4',
+                    highlight: '#9e9e9e'
+                }
+            },
+            items: [{
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项1'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项2'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项3'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项4'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项5'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项6'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项7'
+            }, {
+                icon: 'widget://image/wechat.png',
+                highlight: 'widget://image/wechat.png',
+                title: '菜单项8'
+            }]
+        }, function(ret) {
+            if (ret) {
+                alert(JSON.stringify(ret));
+            }
+        });
+
+    };
+</script>
+
+</html>

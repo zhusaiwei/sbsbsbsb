@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/aui.css">
+    <!-- <script type="text/javascript" src="./script/flexible.js"></script> -->
+    <style type="text/css">
+        .userName_input , .userCode_input , .userPwd_input , .userPwdTrue_input , .btn_submit{
+          width: 100%;
+          height: 2rem;
+          text-align: center;
+          margin-top: 0.9rem !important;
+        }
+        .userName_input {
+          margin-top: 1.4rem !important;
+        }
+        .userName , .code , .userPwd , .userPwdTrue {
+          display: inline-block !important;
+          width: 16rem !important;
+          height: 2rem !important;
+          line-height: 2rem !important;
+          padding-left: 0.5rem !important;
+          overflow: hidden !important;
+          color: #333 !important;
+          font-size: 0.75rem !important;
+          border: 1px solid #999 !important;
+          border-radius: 2px !important;
+        }
+        .submit {
+          width: 16rem;
+          height: 2rem;
+          color: #ffffff;
+          font-size: 0.85rem;
+          background: #66CAFF;
+          border: 1px solid #66CAFF;
+          border-radius: 3px;
+          letter-spacing: 1px;
+        }
+        .userCode_input  {
+          position: relative;
+          width: 16rem;
+          margin: 0 auto;
+        }
+        .code_btn {
+          width: 5.75rem;
+          height: 1.9rem;
+          right: 0.05rem;
+          top: 0.05rem;
+          bottom: 0;
+          position: absolute;
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          font-size: 0.65rem;
+          color: #333;
+          letter-spacing: 1px;
+          background: #ECECEC;
+        }
+        .Agreement {
+          width: 16rem;
+          margin: 0 auto;
+          margin-top: 0.4rem;
+          color: #333;
+          font-size: 0.7rem;
+        }
+        .aui-radio {
+          width: 0.9rem;
+          height: 0.9rem;
+          vertical-align: sub;
+        }
+        .model {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.45);
+          z-index: 10;
+          padding: 2.4rem 0.875rem 2.7rem 0.875rem;
+        }
+        .model_agreement {
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          border-radius: 3px;
+        }
+        .content {
+          padding: 0 0.875rem 0.875rem 0.6rem;
+          height: 24.95rem;
+          overflow-y: auto;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <header id="header" class="aui-bar aui-bar-nav">
+      <div class="aui-pull-left aui-btn" onclick="">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">手机注册</div>
+  </header>
+  <div id="main">
+      <div class="userName_input">
+          <input class='userName' type="text" placeholder="请输入手机号">
+      </div>
+      <div class="userCode_input">
+          <input class='code' type="tel" pattern="[0-9]*" placeholder="请输入短信验证码">
+          <button class="code_btn">获取验证码</button>
+      </div>
+      <div class="userPwd_input">
+          <input class='userPwd' type="text"  placeholder="请设置密码，密码由6-20位字母数字组合">
+
+      </div>
+      <div class="userPwdTrue_input">
+          <input class='userPwdTrue' type="text"  placeholder="请再次输入密码">
+
+      </div>
+      <div class="btn_submit">
+          <button class="submit" type="button" name="button">立即注册</button>
+      </div>
+      <div class="Agreement">
+          <input class='aui-radio aui-checked' type="radio">&nbsp;<span>我已同意并阅读<span style="color:#2D6CAD">《帮用户注册协议》</span></span>
+      </div>
+  </div>
+  <div class="model">
+    <div class="model_agreement">
+      <div style='border-bottom:0 !important;' class="aui-bar aui-bar-nav">
+        <div class="aui-pull-right aui-btn" onclick="">
+            <span class="aui-iconfont aui-icon-close"></span>
+        </div>
+        <div class="aui-title" style='font-size:0.75rem !important;color:#2C3038 !important;letter-spacing:1px;'>帮使用协议</div>
+      </div>
+      <div class="content">
+          扫动帮平台（以下简称”bang”）：网址：http://wap.emeker.com（以下简称本网站）所提供的各项服务和内容的所有权和运作权均归广州易觅网络科技有限公司（以下简称"易觅"）所有。如果您在觅客、易觅公司网站或其他易觅提供的移动应用或软件上，访问、预定或使用我们的产品或服务（以下统称为"服务"），便视为您接受了以下使用协议，请仔细阅读以下内容。如果您不同意以下任何内容，请立刻停止访问觅客或使用觅客提供的服务。<br><br> 一、协议总则 <br><br><br>本协议内容包括协议正文、觅客网站子频道各单项服务协议及其他觅客已经发布的或将来可能发布的各类规则，包括但不限于隐私政策、免责声明、知识产权声明、权利声明、觅客平台用户协议、觅客个人账户协议等其他协议和条款（以下统称"其他条款"）。如果本协议与"其他条款"有不一致之处，则以"其他条款"为准。除另行明确声明外，任何觅客提供的服务均受本协议约束。<br><br> 二、 本站服务条款的确认和接纳<br><br><br> 1. 广州易觅网络科技有限公司（以下统称本公司）依据《觅客商城使用协议》(以下简称本协议)的规定提供服务，本协议具有合同效力。本公司在此特别提醒您认真阅读本协议中各条款， 包括免除或者限制广州易觅网络科技有限公司责任的免责条款，及对用户权利限制的条款。 2.请您审阅并接受或不接受本协议（未成年人应在法定监护人陪同下审阅）。除非您接受本协议，否则您无权使用觅客提供的相关服务。无论任何情形下，您的
+      </div>
+
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/fastclick.js"></script>
+<script type="text/javascript">
+apiready = function() {
+    var header = $api.byId('header');
+    //适配iOS 7+，Android 4.4+状态栏
+    FastClick.attach(document.body);
+    $api.fixStatusBar(header);
+
+};
+</script>
+</html>
